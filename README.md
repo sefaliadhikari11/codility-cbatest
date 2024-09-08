@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project includes test cases for the Swagger Petstore API, focusing on various endpoints. The tests are written using pytest and utilize the requests library for making HTTP requests to the API.
+This project includes test cases for the Swagger Petstore API, focusing on various endpoints. The tests are written using `pytest` and utilize the `requests` library for making HTTP requests to the API.
 
 ## Prerequisites
 Before running the tests, ensure you have the following installed:
@@ -17,6 +17,7 @@ Before running the tests, ensure you have the following installed:
 First, clone the repository to your local machine: <br> 
     ```
     git clone https://github.com/sefaliadhikari11/codility-cbatest.git
+    git checkout feature/SefaliAdhikari-CBATest  
     cd codility-cbatest
     ```
 
