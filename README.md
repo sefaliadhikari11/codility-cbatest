@@ -60,6 +60,10 @@ Execute the tests using `pytest`:
     ```
     pytest
     ```
+   To see more detailed output, you can run: <br>
+   ```
+   pytest -v
+   ```
    By default, `pytest` will discover and run all the test files that match the pattern `test_*.py` or `*_test.py` in the `tests` directory. <br> <br> 
 3. **Viewing Test Results** <br>
 After running the tests, `pytest` will display the results in the terminal. It will show which tests passed, failed, or were skipped.
@@ -67,4 +71,4 @@ After running the tests, `pytest` will display the results in the terminal. It w
 
 ## Test File Structure
 - `tests/test_pet.py`: Contains test cases for the Pet API endpoints.
-- `tests/helpers/ai_helpers.py`: Contains helper functions for making API requests.
+- `tests/helpers/api_helpers.py`: Contains helper functions for making API requests.

@@ -1,5 +1,6 @@
-from config import BASE_URL
 import requests
+
+BASE_URL = "https://petstore.swagger.io/v2"
 
 def add_pet(pet_id, pet_name, pet_status, photo_url):
     """Helper function to add a pet."""

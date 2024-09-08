@@ -1,8 +1,9 @@
 import pytest
 import requests
-from config import BASE_URL
+from pathlib import Path
 from helpers.api_helpers import add_pet, upload_image, update_pet, delete_pet
 
+BASE_URL = "https://petstore.swagger.io/v2"
 
 def test_add_pet():
     """Test case for a successfully adding a pet."""
@@ -22,7 +23,7 @@ def test_add_pet_with_invalid_data():
     pet_id = "invalid id" # non-integer
     pet_name = "invalid pet"
     pet_status = "invalid status" # should be one of 'available', 'pending', 'sold'
-    photo_url = "invalid url" # should be array
+    photo_url = "invalid url" # should be an array
     response, pet_id = add_pet(pet_id, pet_name, pet_status, photo_url)
     assert response.status_code == 405, "Expected status code 405 but got {response.status_code}"
 
@@ -127,8 +128,9 @@ def test_upload_image():
     pet_status = "available"
     photo_url = ["http://test.com/Tommie.jpg"]
     response, pet_id = add_pet(pet_id, pet_name, pet_status, photo_url)
-    path = '/codility-cbatest/files/test_image.jpg'
-    response = upload_image(pet_id, path, 'Test Image Metadata')
+
+    filepath = Path("files")/ "test_image.jpg"
+    response = upload_image(pet_id, filepath, 'Test Image Metadata')
     assert response.status_code == 200, f"Expected status code 200 but got {response.status_code}"
 
 
